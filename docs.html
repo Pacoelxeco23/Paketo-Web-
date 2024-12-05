@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paketo Buildpacks Docs</title>
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://paketo.io/v2/images/logo-paketo-light.svg" alt="Paketo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="docs.html" class="active">Docs</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://blog.paketo.io/" target="_blank">Blog</a></li>
+                <li><a href="https://github.com/paketo-buildpacks" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#getting-started" class="active">Getting Started</a></li>
+                <li><a href="#how-to">How To</a></li>
+                <li><a href="#concepts">Concepts</a></li>
+                <li><a href="#reference">Reference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <main class="main-content">
+        <h1>Getting Started</h1>
+        <p>
+            This section gets you started with Paketo Buildpacks using <strong>Paketo Builders</strong>, the 
+            <strong>pack CLI</strong>, and Docker.
+        </p>
+        <p>
+            Select your favorite language and learn how to get started with Paketo Buildpacks.
+        </p>
+
+        <div class="language-buttons">
+            <button>.NET Core</button>
+            <button>Getting Started</button>
+            <button>Java</button>
+            <button>Node.js</button>
+            <button>Python</button>
+        </div>
+
+        <section class="language-section">
+            <h2>Java</h2>
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Install Docker by following this <a href="#">guide</a>.</li>
+                <li>Install the pack CLI by following this <a href="#">guide</a>.</li>
+            </ul>
+
+            <h3>Build the App Image From Source Code</h3>
+            <pre><code>
+                git clone https://github.com/paketo-buildpacks/samples \ 
+                && cd samples/java/maven
+                pack build paketo-demo-app --builder paketobuildpacks/builder-jammy-base
+            </code></pre>
+
+            <h3>Run the App</h3>
+            <p>
+                Run the app image with Docker. It will receive incoming requests on <strong>localhost:8080</strong>.
+            </p>
+            <pre><code>
+            docker run -d -p 8080:8080 -e PORT=8080 paketo-demo-app
+            </code></pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">Paketo Buildpacks is a Cloud Foundry project.</p>
+        <div>
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://slack.com">Slack</a>
+            <a href="https://github.com">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
+
